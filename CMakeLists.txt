@@ -1,0 +1,188 @@
+cmake_minimum_required(VERSION 3.12)
+project(C)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(practice-cpp-master/arrays)
+include_directories(practice-cpp-master/binary_search_tree)
+include_directories(practice-cpp-master/graphs)
+include_directories(practice-cpp-master/hash_table)
+include_directories(practice-cpp-master/lib/googletest/include)
+include_directories(practice-cpp-master/lib/googletest/include/gtest)
+include_directories(practice-cpp-master/lib/googletest/include/gtest/internal)
+include_directories(practice-cpp-master/lib/googletest/include/gtest/internal/custom)
+include_directories(practice-cpp-master/lib/googletest/samples)
+include_directories(practice-cpp-master/lib/googletest/src)
+include_directories(practice-cpp-master/lib/googletest/test)
+include_directories(practice-cpp-master/lib/googletest/xcode/Samples/FrameworkSample)
+include_directories(practice-cpp-master/linked_lists/src)
+include_directories(practice-cpp-master/merge_sort)
+include_directories(practice-cpp-master/priority_queue)
+include_directories(practice-cpp-master/queue_array/src)
+include_directories(practice-cpp-master/queue_linked_list/src)
+include_directories(practice-cpp-master/quick_sort)
+
+add_executable(C
+        MakerEdit/chanceEditor.cc
+        practice-cpp-master/arrays/jvector.cc
+        practice-cpp-master/arrays/jvector.h
+        practice-cpp-master/arrays/jvector_test.cc
+        practice-cpp-master/arrays/jvector_test.h
+        practice-cpp-master/arrays/main.cc
+        practice-cpp-master/binary_search_tree/bst_simple.cc
+        practice-cpp-master/binary_search_tree/bst_simple.h
+        practice-cpp-master/binary_search_tree/main.cc
+        practice-cpp-master/graphs/DirectedGraph.cc
+        practice-cpp-master/graphs/DirectedGraph.h
+        practice-cpp-master/graphs/experiments.h
+        practice-cpp-master/graphs/Graph.cc
+        practice-cpp-master/graphs/Graph.h
+        practice-cpp-master/graphs/GraphRepresentation.cc
+        practice-cpp-master/graphs/GraphRepresentation.h
+        practice-cpp-master/graphs/main.cc
+        practice-cpp-master/hash_table/hash_object.h
+        practice-cpp-master/hash_table/hash_table.cc
+        practice-cpp-master/hash_table/hash_table.h
+        practice-cpp-master/hash_table/hash_tables_tests.cc
+        practice-cpp-master/hash_table/hash_tables_tests.h
+        practice-cpp-master/hash_table/main.cc
+        practice-cpp-master/lib/googletest/codegear/gtest_all.cc
+        practice-cpp-master/lib/googletest/codegear/gtest_link.cc
+        practice-cpp-master/lib/googletest/include/gtest/internal/custom/gtest-port.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/custom/gtest-printers.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/custom/gtest.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-death-test-internal.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-filepath.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-internal.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-linked_ptr.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-param-util-generated.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-param-util.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-port-arch.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-port.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-string.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-tuple.h
+        practice-cpp-master/lib/googletest/include/gtest/internal/gtest-type-util.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-death-test.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-message.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-param-test.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-printers.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-spi.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-test-part.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest-typed-test.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest_pred_impl.h
+        practice-cpp-master/lib/googletest/include/gtest/gtest_prod.h
+        practice-cpp-master/lib/googletest/samples/prime_tables.h
+        practice-cpp-master/lib/googletest/samples/sample1.cc
+        practice-cpp-master/lib/googletest/samples/sample1.h
+        practice-cpp-master/lib/googletest/samples/sample10_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample1_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample2.cc
+        practice-cpp-master/lib/googletest/samples/sample2.h
+        practice-cpp-master/lib/googletest/samples/sample2_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample3-inl.h
+        practice-cpp-master/lib/googletest/samples/sample3_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample4.cc
+        practice-cpp-master/lib/googletest/samples/sample4.h
+        practice-cpp-master/lib/googletest/samples/sample4_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample5_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample6_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample7_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample8_unittest.cc
+        practice-cpp-master/lib/googletest/samples/sample9_unittest.cc
+        practice-cpp-master/lib/googletest/src/gtest-all.cc
+        practice-cpp-master/lib/googletest/src/gtest-death-test.cc
+        practice-cpp-master/lib/googletest/src/gtest-filepath.cc
+        practice-cpp-master/lib/googletest/src/gtest-internal-inl.h
+        practice-cpp-master/lib/googletest/src/gtest-port.cc
+        practice-cpp-master/lib/googletest/src/gtest-printers.cc
+        practice-cpp-master/lib/googletest/src/gtest-test-part.cc
+        practice-cpp-master/lib/googletest/src/gtest-typed-test.cc
+        practice-cpp-master/lib/googletest/src/gtest.cc
+        practice-cpp-master/lib/googletest/src/gtest_main.cc
+        practice-cpp-master/lib/googletest/test/gtest-death-test_ex_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-death-test_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-filepath_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-linked_ptr_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-listener_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-message_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-options_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-param-test2_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-param-test_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-param-test_test.h
+        practice-cpp-master/lib/googletest/test/gtest-port_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-printers_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-test-part_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-tuple_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-typed-test2_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-typed-test_test.cc
+        practice-cpp-master/lib/googletest/test/gtest-typed-test_test.h
+        practice-cpp-master/lib/googletest/test/gtest-unittest-api_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_all_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_break_on_failure_unittest_.cc
+        practice-cpp-master/lib/googletest/test/gtest_catch_exceptions_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_color_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_env_var_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_environment_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_filter_unittest_.cc
+        practice-cpp-master/lib/googletest/test/gtest_help_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_list_tests_unittest_.cc
+        practice-cpp-master/lib/googletest/test/gtest_main_unittest.cc
+        practice-cpp-master/lib/googletest/test/gtest_no_test_unittest.cc
+        practice-cpp-master/lib/googletest/test/gtest_output_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_pred_impl_unittest.cc
+        practice-cpp-master/lib/googletest/test/gtest_premature_exit_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_prod_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_repeat_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_shuffle_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_sole_header_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_stress_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_throw_on_failure_ex_test.cc
+        practice-cpp-master/lib/googletest/test/gtest_throw_on_failure_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_uninitialized_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_unittest.cc
+        practice-cpp-master/lib/googletest/test/gtest_xml_outfile1_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_xml_outfile2_test_.cc
+        practice-cpp-master/lib/googletest/test/gtest_xml_output_unittest_.cc
+        practice-cpp-master/lib/googletest/test/production.cc
+        practice-cpp-master/lib/googletest/test/production.h
+        practice-cpp-master/lib/googletest/xcode/Samples/FrameworkSample/widget.cc
+        practice-cpp-master/lib/googletest/xcode/Samples/FrameworkSample/widget.h
+        practice-cpp-master/lib/googletest/xcode/Samples/FrameworkSample/widget_test.cc
+        practice-cpp-master/linked_lists/src/linked_list.cc
+        practice-cpp-master/linked_lists/src/linked_list.h
+        practice-cpp-master/linked_lists/src/list_element.h
+        practice-cpp-master/linked_lists/tests/list_tests.cc
+        practice-cpp-master/linked_lists/main.cc
+        practice-cpp-master/merge_sort/main.cc
+        practice-cpp-master/merge_sort/merge_sort.cc
+        practice-cpp-master/merge_sort/merge_sort.h
+        practice-cpp-master/merge_sort/test_merge_sort.cc
+        practice-cpp-master/merge_sort/test_merge_sort.h
+        practice-cpp-master/priority_queue/main.cc
+        practice-cpp-master/priority_queue/priority_queue.cc
+        practice-cpp-master/priority_queue/priority_queue.h
+        practice-cpp-master/queue_array/src/queue_array.cc
+        practice-cpp-master/queue_array/src/queue_array.h
+        practice-cpp-master/queue_array/tests/queue_array_tests.cc
+        practice-cpp-master/queue_array/main.cc
+        practice-cpp-master/queue_linked_list/src/list_element.h
+        practice-cpp-master/queue_linked_list/src/queue_linked_list.cc
+        practice-cpp-master/queue_linked_list/src/queue_linked_list.h
+        practice-cpp-master/queue_linked_list/tests/queue_llist_tests.cc
+        practice-cpp-master/queue_linked_list/main.cc
+        practice-cpp-master/quick_sort/main.cc
+        practice-cpp-master/quick_sort/quick_sort.cc
+        practice-cpp-master/quick_sort/quick_sort.h
+        practice-cpp-master/quick_sort/test_sort.cc
+        practice-cpp-master/quick_sort/test_sort.h
+        amazonq1.cpp
+        check.cpp
+        TestArray.cpp
+        TestClass.cpp
+        TestClass2.cpp
+        TestDoubleLinkedList.cpp
+        TESTGCD.cpp
+        TestLinkedList.cpp
+        TestTree.cpp
+        TestTrees.cpp)
