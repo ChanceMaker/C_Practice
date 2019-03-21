@@ -1,3 +1,0 @@
-C:/Users/ChanceMaker/Documents/Programs/C/MakerEdit/cmake-build-debug/CMakeFiles/MakerEdit.dir
-C:/Users/ChanceMaker/Documents/Programs/C/MakerEdit/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/ChanceMaker/Documents/Programs/C/MakerEdit/cmake-build-debug/CMakeFiles/rebuild_cache.dir
