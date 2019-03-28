@@ -3,44 +3,43 @@
 
 class Solution {
 public:
-    int maxArea(std::vector<int>& height) {
+    int maxArea(std::vector<int> &height) {
         std::vector<int> bounds;
         int pos = 0;
+
+        int size = height.size();
         int diff;
+        int ndx1,ndx2;
         int lowerLimit,upperLimit = 0;
         int tmpArea = 0;
         int maxArea = 0;
-        /*Nested loop to find all possible volumes and keep the highest*/
-        for(auto iter = height.begin(); iter != height.end();iter++){
-            for(auto iter2 = height.begin(); iter2 != height.end();iter2++){
-                if(iter != iter2){
-                    int ndx1,ndx2;
-                    ndx1 = iter - height.begin();//iterator 1 index
-                    ndx2 = iter2 - height.begin();//iterator 2 index
-                    if(*iter < *iter2){
-                        if(ndx1 < ndx2){
-                            diff = ndx2  - ndx1;
-                        }else{
-                            diff = ndx1 - ndx2;
-                        }
-                        tmpArea = *iter * diff;
-                    }else{
-                        if(ndx1 < ndx2){
-                            diff = ndx2  - ndx1;
-                        }else{
-                            diff = ndx1 - ndx2;
-                        }
-
-                        tmpArea = *iter2 * diff;
-                    }
-                    if(tmpArea > maxArea){//new Max area and its upper and lower bounds need to be saved
-                        maxArea = tmpArea;
-                        tmpArea = 0;
-                    }
-
-
-                }
+        /*Reworked volume finder with moving pointer from front to back with wile loop
+         * Ideation: Each time this loop checks if the two end meet in the middle.  After
+         * that check there is a forward biased iterator and a reverse biased iterator
+         * because the value of the volume is based on the smaller "wall" you calculate the volume
+         * and then if increment the smaller of the two walls iterator.
+         * **The right wall moves in if it is smaller than the left wall and the inverse of that is true as well
+         */
+        auto itr = height.begin();
+        auto itr2 = height.rbegin();
+        while(true){
+            if(pos >= size){
+                break;
             }
+            ndx1 = itr - height.begin();
+            ndx2 = itr2 - height.rbegin();
+            diff = size - 1 - pos;
+            if(*itr <= *itr2){
+                tmpArea = diff * (*itr);
+                itr++;
+            }else{
+                tmpArea = diff * (*itr2);
+                itr2++;
+            }
+            if(tmpArea > maxArea){
+                maxArea = tmpArea;
+            }
+            pos++;
 
         }
         return maxArea;
