@@ -2,123 +2,48 @@
 #include <vector>
 class Solution {
 public:
+    const int BOARD_SIZE = 9;
     bool isValidSudoku(std::vector<std::vector<char>>& board) {
-        display2dVector(board);
-        std::cout <<"------------\n";
-        std::vector<std::vector<bool>> rowTrueMatrix;//matrix to see if rows are true
-        std::vector<std::vector<bool>> colTrueMatrix;//matrix to see if colums are true
-        int rowndx = 0;
-        int ndx =0;
-        bool rowsValid = true;
-        bool colsValid = true;
-        int tmpRow[board.size()];
-        for(auto itr = board.begin(); itr != board.end(); itr++){
-            ndx = itr - board.begin();
-            std::vector<bool> row;
-            std::vector<bool> col;
+        std::vector<std::vector<char>> row_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE+1,0));
+        std::vector<std::vector<char>> col_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE+1,0));
+        std::vector<std::vector<char>> sq_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE+1,0));
 
-            for(auto itr2 = itr->begin(); itr2 != itr->end(); itr2++){
+        for(int i=0; i<BOARD_SIZE; i++) {
+            for(int j=0; j<BOARD_SIZE; j++) {
+                if(board[i][j] == '.') continue;
+                int num = board[i][j] - 48;
 
-                rowndx = std::distance(itr->begin(),itr2);
-                row.push_back(isUniqueRow(rowndx,*itr2,board[ndx]));
-                col.push_back(isUniqueCol(ndx,*itr2,board));
+                // store in row_free
+                if(row_free[i][num] != 0) return false;
+                else row_free[i][num] = 1;
 
+                // store in col_free
+                if(col_free[j][num] != 0) return false;
+                else col_free[j][num] = 1;
+
+                // store in sq_free
+                if(sq_free[(i/3)*3+(j/3)][num] != 0) return false;
+                else sq_free[(i/3)*3+(j/3)][num] = 1;
             }
-            colTrueMatrix.push_back(col);
-            rowTrueMatrix.push_back(row);
-        }
-        std::cout <<"---ROWS VECTOR ---\n";
-        display2dVectorbool(rowTrueMatrix);
-        std::cout <<"---COLS VECTOR ---\n";
-        display2dVectorbool(colTrueMatrix);
-        return true;
-    }
-    bool isUniqueRow(int ndx,char x,std::vector<char> & row){
-        int i = 0;
-        for(auto itr = row.begin(); itr != row.end(); itr++){
-            i = itr - row.begin();
-            if(x == *itr && i != ndx){
-                if(x != '.'){
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-    bool isUniqueCol(int ndx,char x,std::vector<std::vector<char>> & row){
-
-        if(x == '.')
-            return true;
-
-        std::vector<char> col;
-        for(auto itr = row.begin(); itr != row.end(); itr++){
-            int ndx2 = itr - row.begin();
-            col.push_back(itr->at(ndx));
-        }
-
-        for(auto itr3 = col.begin(); itr3 != col.end();itr3++){
-            int i = std::distance(col.begin(),itr3);
-            if(*itr3 == x ){
-                if(ndx != i ){
-                    std::cout <<"ITR3 VALUE : "<< *itr3 << "\n";
-                    std::cout <<"NDX VALUE : "<< ndx << "\n";
-                    std::cout <<"i VALUE : "<< i << "\n";
-                    return false;
-                }
-
-            }
-
-
         }
 
         return true;
     }
-
-
-    void display2dVector(std::vector<std::vector<char>>& board){
-        for(auto itr = board.begin(); itr != board.end(); itr++){
-            for(auto itr2 = itr->begin(); itr2 != itr->end(); itr2++){
-                std::cout << *itr2;
-            }
-            std::cout << "\n";
-        }
-    }
-    void display2dVectorbool(std::vector<std::vector<bool>>& board){
-        for(auto itr = board.begin(); itr != board.end(); itr++){
-            for(auto itr2 = itr->begin(); itr2 != itr->end(); itr2++){
-                std::cout << *itr2;
-            }
-            std::cout << "\n";
-        }
-    }
-    void displayVector(std::vector<char>& board){
-        for(auto itr = board.begin(); itr != board.end(); itr++){
-            std::cout << *itr;
-        }
-        std::cout << "\n";
-    }
-    void displayVectorbool(std::vector<bool>& board){
-        for(auto itr = board.begin(); itr != board.end(); itr++){
-            std::cout << *itr;
-        }
-        std::cout << "\n";
-    }
-
 };
 int main() {
     Solution answer;
     std::vector<std::vector<char>> board {
-            {'5','3','.','.','7','.','.','.','.'},
-            {'6','.','.','1','9','5','.','.','.'},
-            {'.','9','8','.','.','.','.','6','.'},
-            {'8','.','.','.','6','.','.','.','3'},
-            {'4','.','.','8','.','3','.','.','1'},
-            {'7','.','.','.','2','.','.','.','6'},
-            {'.','6','.','.','.','.','2','8','.'},
-            {'.','.','.','4','1','9','.','.','5'},
-            {'.','.','.','.','8','.','.','7','9'}
+            {'.','.','.','.','5','.','.','1','.'},
+            {'.','4','.','3','.','.','.','.','.'},
+            {'.','.','.','.','.','3','.','.','1'},
+            {'8','.','.','.','.','.','.','2','.'},
+            {'.','.','2','.','7','.','.','.','.'},
+            {'.','1','5','.','.','.','.','.','.'},
+            {'.','.','.','.','.','2','.','.','.'},
+            {'.','2','.','9','.','.','.','.','.'},
+            {'.','.','4','.','.','.','.','.','.'}
     };
 
-    answer.isValidSudoku(board);
+    std::cout <<"ANSWER = " <<answer.isValidSudoku(board);
     return 0;
 }
