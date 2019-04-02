@@ -4,10 +4,9 @@ class Solution {
 public:
     const int BOARD_SIZE = 9;
     bool isValidSudoku(std::vector<std::vector<char>>& board) {
-        std::vector<std::vector<char>> row_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE+1,0));
-        std::vector<std::vector<char>> col_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE+1,0));
-        std::vector<std::vector<char>> sq_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE+1,0));
-
+        std::vector<std::vector<char>> row_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE + 1,0));
+        std::vector<std::vector<char>> col_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE + 1,0));
+        std::vector<std::vector<char>> sq_free(BOARD_SIZE,std::vector<char>(BOARD_SIZE + 1,0));
         for(int i=0; i<BOARD_SIZE; i++) {
             for(int j=0; j<BOARD_SIZE; j++) {
                 if(board[i][j] == '.') continue;
@@ -26,10 +25,10 @@ public:
                 else sq_free[(i/3)*3+(j/3)][num] = 1;
             }
         }
-
         return true;
     }
 };
+
 int main() {
     Solution answer;
     std::vector<std::vector<char>> board {
