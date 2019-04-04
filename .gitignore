@@ -3,3 +3,5 @@
 .idea/
 cmake-build-debug/
 MakerEdit/
+firstBadVersion/CMakeLists.txt
+tq
