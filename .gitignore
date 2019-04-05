@@ -1,7 +1,9 @@
-*.wav
 *.exe
 .idea/
 cmake-build-debug/
 MakerEdit/
+MakerEdit/
 firstBadVersion/CMakeLists.txt
 tq
+removeElements/CMakeLists.txt
+ 
