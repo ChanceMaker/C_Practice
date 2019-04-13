@@ -140,7 +140,6 @@ ListNode * Solution::rotateHelp(ListNode *head) {
             current->val = current ->next->val;
         else
             current->val = val;
-
         current = current->next;
     }
     return newHead;
