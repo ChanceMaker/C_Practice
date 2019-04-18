@@ -29,6 +29,14 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
 
 
  */
+
+struct TreeNode
+{
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode(int x) : val(x),left(NULL),right(NULL){}
+};
 std::vector<int> createVectFromArray(std::array<int,5> x){
 	std::vector<int> Vect;
 
@@ -37,13 +45,16 @@ std::vector<int> createVectFromArray(std::array<int,5> x){
 	}
 	return Vect;
 }
-struct TreeNode
-{
-	int val;
-	TreeNode *left;
-	TreeNode *right;
-	TreeNode(int x) : val(x),left(NULL),right(NULL){}
-};
+
+void inorderPrint(TreeNode * x){
+	if(x == NULL)
+		return;
+	if(x->left != NULL)
+		inorderPrint(x->left);
+	std::cout << x->val << " ";
+	if(x->right != NULL)
+		inorderPrint(x->right);
+}
 
 class Solution {
 public:
@@ -78,5 +89,7 @@ int main(int argc, char const *argv[])
 	std::array<int,5> ary  = {-10,-3,0,5,9};
 	intVect = createVectFromArray(ary);
 	BTree = answer.sortedArrayToBST(intVect);
+	inorderPrint(BTree);
+
 	return 0;
 }
