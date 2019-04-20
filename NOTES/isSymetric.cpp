@@ -18,11 +18,7 @@ public:
     		return true;
     	if(R1 == NULL || R2 == NULL)
     		return false;
-    	if(R1->val == R2->val)
-    		return true;
-    	if(R1->val != R2->val)
-    		return false;
-    	return helper(R1->left,R2->left) && helper(R1->right,R2->right);
-
+    	
+    	return (R1->val == R2->val) && helper(R1->left,R2->left) && helper(R1->right,R2->right);
     }
 };
