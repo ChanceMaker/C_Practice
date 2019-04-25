@@ -64,7 +64,7 @@ public:
      * This function is returns a boolean value stating whether
      * the function is balanced or not.
      */
-    bool isBalanced(TreeNode* root) {
+    bool isBalanced(TreeNode *root) {
         bool balanced = true;
         height(root,balanced);
         return balanced;
