@@ -1,17 +1,38 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 vector<string> split_string(string);
+int gcd(int a, int b)
+{
+    // Everything divides 0
+    if (a == 0)
+        return b;
+    if (b == 0)
+        return a;
+
+    // base case
+    if (a == b)
+        return a;
+
+    // a is greater
+    if (a > b)
+        return gcd(a-b, b);
+    return gcd(a, b-a);
+}
 
 /*
  * Complete the restaurant function below.
  */
 int restaurant(int l, int b) {
-    /*
-     * Write your code here.
-     */
-    return 0;
+    int cnt = 0;
+    int area;
+    int answer;
+    int posDim; // possible dimensions . i.e. width and height of the box;
+    //first find the area
+    area = l * b;
+    //biggest box width would be the lowest of the two dimensions
+    answer = (l /gcd(l,b)) * (b/gcd(l,b));
+    return answer;
 
 }
 
