@@ -99,7 +99,7 @@ int main() {
     int ans;
     std::vector<std::string> checkRom;
 
-    std::string inX = "D";
+    std::string inX = "M";
     Solution x_1;
     ans = x_1.romanToInt(inX);
     std::cout <<"THE VALUE IS : "<<ans;

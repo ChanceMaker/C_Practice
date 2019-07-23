@@ -5,5 +5,11 @@ cmake-build-debug/
 MakerEdit/
 MakerEdit/
 tq
+*.sln
+.scripting.xcodeproj
+*.zip
+*.cfg
+*.vcxproj
+*.user
 
  
