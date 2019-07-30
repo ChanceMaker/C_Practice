@@ -9,27 +9,20 @@
 
 #ifndef INTERPRETER_TOKEN_H
 #define INTERPRETER_TOKEN_H
-typedef char* TokenType;
 
-struct Token{
-	TokenType type;
-    std::string literal;
-};
 //token class
 class token{
-
 	std::string type,value;
 public:
 	//Base constructor for when you are given the 
 	//token object
-	token(token & t,auto,auto);
+	token();
+	token(token & ,std::string,std::string);
+	token(std::string);//constructor that just takes a string and creates the token
+	std::string getType();
+	std::string getValue();
+
 };
-//Vector of tokentypes initialized as constants
-std::vector< std::string> v{"ILLEGAL","EOF","IDENT","INTEGER",
-					   "=","+",",",";","LPAREN","RPAREN",
-					   "LBRACE","RBRACE","FUNCTION","LET"};
-for (std::vector<std::string*>::iterator i = v.begin(); i != v.end(); ++i)
-{
-	printf("%s\n", *(i));
-}
+
+
 #endif //INTERPRETER_TOKEN_Hv
